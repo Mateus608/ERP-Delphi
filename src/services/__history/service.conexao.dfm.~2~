@@ -1,0 +1,17 @@
+object ServiceConexao: TServiceConexao
+  Height = 416
+  Width = 640
+  object FDConexao: TFDConnection
+    Left = 120
+    Top = 56
+  end
+  object FDCursor: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 200
+    Top = 56
+  end
+  object FDDriverLink: TFDPhysFBDriverLink
+    Left = 272
+    Top = 56
+  end
+end

@@ -88,7 +88,7 @@
         <DCC_DcuOutput>.\dcus</DCC_DcuOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>..\..\ico.ico</Icon_MainIcon>
+        <Icon_MainIcon>assert\ico\ico.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -106,6 +106,11 @@
         <DCCReference Include="src\views\view.principal.pas">
             <Form>ViewPrincipal</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\services\service.conexao.pas">
+            <Form>ServiceConexao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -133,7 +138,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="Win32\Debug\ERP.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="install\ERP.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ERP.exe</RemoteName>
                         <Overwrite>true</Overwrite>
