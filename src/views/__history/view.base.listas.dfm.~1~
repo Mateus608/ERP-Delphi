@@ -1,0 +1,4 @@
+inherited ViewBaseListas: TViewBaseListas
+  Caption = 'ViewBaseListas'
+  TextHeight = 15
+end
