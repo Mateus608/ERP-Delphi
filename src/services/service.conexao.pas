@@ -7,13 +7,21 @@ uses
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
   Data.DB, FireDAC.Comp.Client, FireDAC.Phys.FBDef, FireDAC.Phys.IBBase,
-  FireDAC.Phys.FB, FireDAC.Comp.UI, System.IniFiles;
+  FireDAC.Phys.FB, FireDAC.Comp.UI, System.IniFiles, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,
+  provider.constants;
 
 type
   TServiceConexao = class(TDataModule)
     FDConexao: TFDConnection;
     FDCursor: TFDGUIxWaitCursor;
     FDDriverLink: TFDPhysFBDriverLink;
+    QRYFilial: TFDQuery;
+    QRYFilialFIL_CODIGO: TIntegerField;
+    QRYFilialFIL_RAZAO: TStringField;
+    QRYFilialFIL_FANTASIA: TStringField;
+    QRYFilialFIL_CNPJ: TStringField;
+    QRYFilialFIL_TELEFONE: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -68,7 +76,18 @@ begin
 
   finally
 
+    FreeAndNil(LIniFile);
+
   end;
+
+  // Carrego minha filial (O numero da filial que vai utilizar o sistema)
+  QRYFilial.Close;
+  QRYFilial.Params[0].AsInteger := 2;
+  QRYFilial.Open();
+
+  // Salva a filial escolhida ao fazer login
+  iCodFilial := QRYFilialFIL_CODIGO.AsInteger;
+  sRazaoFilial := QRYFilialFIL_RAZAO.AsString;
 
 end;
 

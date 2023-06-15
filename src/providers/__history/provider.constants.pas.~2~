@@ -1,0 +1,11 @@
+unit provider.constants;
+
+interface
+
+var
+  iCodFilial: Integer;
+  sRazaoFilial : String;
+
+implementation
+
+end.

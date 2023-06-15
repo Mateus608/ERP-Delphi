@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   view.principal in 'src\views\view.principal.pas' {ViewPrincipal},
   service.conexao in 'src\services\service.conexao.pas' {ServiceConexao: TDataModule},
-  service.cadastro in 'src\services\service.cadastro.pas' {ServiceCadastro: TDataModule};
+  service.cadastro in 'src\services\service.cadastro.pas' {ServiceCadastro: TDataModule},
+  provider.constants in 'src\providers\provider.constants.pas';
 
 {$R *.res}
 
