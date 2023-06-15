@@ -118,6 +118,10 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="src\providers\provider.constants.pas"/>
+        <DCCReference Include="src\views\view.base.pas">
+            <Form>ViewBase</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

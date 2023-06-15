@@ -82,7 +82,7 @@ begin
 
   // Carrego minha filial (O numero da filial que vai utilizar o sistema)
   QRYFilial.Close;
-  QRYFilial.Params[0].AsInteger := 2;
+  QRYFilial.Params[0].AsInteger := 1;
   QRYFilial.Open();
 
   // Salva a filial escolhida ao fazer login
