@@ -1,0 +1,107 @@
+unit view.fornecedores;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, view.base.listas, Data.DB, Vcl.StdCtrls,
+  Vcl.WinXCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.WinXPanels, Vcl.Buttons,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls, service.cadastro, provider.constants,
+  Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TViewFornecedores = class(TViewBaseListas)
+    pnlTituloCadCliente: TPanel;
+    lblTituloCadastro: TLabel;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    edtPES_CNPJCPF: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    procedure FormShow(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  ViewFornecedores: TViewFornecedores;
+
+implementation
+
+{$R *.dfm}
+
+procedure TViewFornecedores.btnCancelarClick(Sender: TObject);
+begin // Cancelar
+  inherited;
+  // Verifica o estado dela(se esta em modo de edição)
+  if ServiceCadastro.QRYPessoas.State in dsEditModes then
+    begin
+      ServiceCadastro.QRYPessoas.Cancel; // Cancela a ação no BD
+      CardPanelListas.ActiveCard := CardPesquisa; // Retorna para a tela de pesquisa no CardPanel
+    end;
+end;
+
+procedure TViewFornecedores.btnEditarClick(Sender: TObject);
+begin // Editar
+  inherited;
+  CardPanelListas.ActiveCard := CardCadastro; // Chama a tela de cadastro no CardPanel
+  edtPES_CNPJCPF.SetFocus; // Coloca o foco no campo CNPJ / CPF
+  ServiceCadastro.QRYPessoas.Edit; // Coloca a qry em modo de edição
+end;
+
+procedure TViewFornecedores.btnExcluirClick(Sender: TObject);
+begin // Excluir
+  inherited;
+  // Verifica se a quantidade de informações é maior que 0
+  if ServiceCadastro.QRYPessoas.RecordCount > 0 then
+    begin
+      ServiceCadastro.QRYPessoas.Delete; // Deleta o cliente do BD
+      ShowMessage('Cliente deletado com sucesso.'); // Dispara a mensagem ao deletar
+      CardPanelListas.ActiveCard := CardPesquisa; // Retorna para a tela de pesquisa no CardPanel
+    end;
+end;
+
+procedure TViewFornecedores.btnNovoClick(Sender: TObject);
+begin // Novo
+  inherited;
+  CardPanelListas.ActiveCard := CardCadastro; // Chama a tela de cadastro no CardPanel
+  edtPES_CNPJCPF.SetFocus; // Coloca o foco no campo CNPJ / CPF
+  ServiceCadastro.QRYPessoas.Insert; // Coloca a qry em modo de inserção
+end;
+
+procedure TViewFornecedores.btnSalvarClick(Sender: TObject);
+begin // Salvar
+  inherited;
+  // Verifica o estado dela(se esta em modo de edição)
+  if ServiceCadastro.QRYPessoas.State in dsEditModes then
+    begin
+      ServiceCadastro.QRYPessoasPES_TIPOPESSOA.AsInteger := 2; // Ele salva o registro com o tipo pessoa = 1
+      ServiceCadastro.QRYPessoas.Post; // Salva - Atualiza no BD
+      ShowMessage('Cliente salvo com sucesso.'); // Dispara a mensagem ao salvar
+      CardPanelListas.ActiveCard := CardPesquisa; // Retorna para a tela de pesquisa no CardPanel
+    end;
+end;
+
+procedure TViewFornecedores.FormShow(Sender: TObject);
+begin // Show
+  inherited;
+  GETPessoas(2);
+end;
+
+end.

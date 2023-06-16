@@ -17,14 +17,17 @@
     <Transaction>2023/06/14 22:45:19.000.793,C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.base.dfm=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.dfm</Transaction>
     <Transaction>2023/06/14 22:45:19.000.793,C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.base.pas=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas</Transaction>
     <Transaction>2023/06/14 23:00:58.000.801,=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas</Transaction>
-    <Transaction>2023/06/14 23:01:45.000.939,C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.dfm=C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.base.listas.dfm</Transaction>
     <Transaction>2023/06/14 23:01:45.000.939,C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas=C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.base.listas.pas</Transaction>
+    <Transaction>2023/06/14 23:01:45.000.939,C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.dfm=C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.base.listas.dfm</Transaction>
     <Transaction>2023/06/15 18:40:20.000.725,=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas</Transaction>
-    <Transaction>2023/06/15 18:40:50.000.434,C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.dfm=C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.clientes.dfm</Transaction>
     <Transaction>2023/06/15 18:40:50.000.434,C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas=C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.clientes.pas</Transaction>
+    <Transaction>2023/06/15 18:40:50.000.434,C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.dfm=C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.clientes.dfm</Transaction>
     <Transaction>2023/06/15 19:25:28.000.262,C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.clientes.pas=</Transaction>
     <Transaction>2023/06/15 19:26:35.000.325,=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas</Transaction>
     <Transaction>2023/06/15 19:27:20.000.542,C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.clientes.pas=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas</Transaction>
     <Transaction>2023/06/15 19:27:20.000.542,C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.clientes.dfm=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.dfm</Transaction>
+    <Transaction>2023/06/15 22:01:44.146,=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas</Transaction>
+    <Transaction>2023/06/15 22:21:43.227,C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.fornecedores.pas=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.pas</Transaction>
+    <Transaction>2023/06/15 22:21:43.227,C:\Users\mateu\Downloads\www\ERPDelphi\src\views\view.fornecedores.dfm=C:\Users\mateu\Downloads\www\ERPDelphi\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>

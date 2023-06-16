@@ -19,7 +19,6 @@ inherited ViewBaseListas: TViewBaseListas
     ParentBackground = False
     TabOrder = 0
     OnMouseDown = pnlTopoMouseDown
-    ExplicitWidth = 780
     object lblTitulo: TLabel
       AlignWithMargins = True
       Left = 38
@@ -108,7 +107,6 @@ inherited ViewBaseListas: TViewBaseListas
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 708
       object btnSair: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -142,8 +140,6 @@ inherited ViewBaseListas: TViewBaseListas
     Color = 7500402
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 440
-    ExplicitWidth = 780
     object btnNovo: TSpeedButton
       AlignWithMargins = True
       Left = 582
@@ -162,6 +158,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnNovoClick
       ExplicitLeft = 296
     end
     object btnEditar: TSpeedButton
@@ -181,6 +178,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnEditarClick
       ExplicitLeft = 384
     end
     object btnCancelar: TSpeedButton
@@ -200,6 +198,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnCancelarClick
       ExplicitLeft = 472
     end
     object btnSalvar: TSpeedButton
@@ -219,6 +218,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnSalvarClick
       ExplicitLeft = 696
     end
     object btnExcluir: TSpeedButton
@@ -238,6 +238,7 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = btnExcluirClick
       ExplicitLeft = 584
     end
   end
@@ -251,8 +252,6 @@ inherited ViewBaseListas: TViewBaseListas
     Color = 7500402
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 780
-    ExplicitHeight = 405
     object CardPanelListas: TCardPanel
       AlignWithMargins = True
       Left = 1
@@ -269,8 +268,7 @@ inherited ViewBaseListas: TViewBaseListas
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 778
-      ExplicitHeight = 405
+      OnCardChange = CardPanelListasCardChange
       object CardPesquisa: TCard
         Left = 0
         Top = 0
@@ -279,8 +277,6 @@ inherited ViewBaseListas: TViewBaseListas
         Caption = 'CardPesquisa'
         CardIndex = 0
         TabOrder = 1
-        ExplicitWidth = 778
-        ExplicitHeight = 405
         object DBGDados: TDBGrid
           AlignWithMargins = True
           Left = 5
@@ -312,7 +308,6 @@ inherited ViewBaseListas: TViewBaseListas
           Color = 15461355
           ParentBackground = False
           TabOrder = 1
-          ExplicitWidth = 778
           object lblTituloPesquisa: TLabel
             Left = 24
             Top = 14

@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons,
   Vcl.Imaging.pngimage, System.Actions, Vcl.ActnList, System.ImageList,
-  Vcl.ImgList, provider.constants, view.clientes;
+  Vcl.ImgList, provider.constants, view.clientes, view.fornecedores;
 
 type
   TViewPrincipal = class(TForm)
@@ -85,6 +85,7 @@ begin // Clientes
   GET_LineMENU(Sender); // Parâmetro da função
   ViewClientes := TViewClientes.Create(Self); // Cria o formulario clientes
   try
+    ViewClientes.Tag := 1; // O Formulario Clientes recebe a Tag 1
     ViewClientes.ShowModal; // Mostra o formulario
   finally
     FreeAndNil(ViewClientes); // Limpa da memória
@@ -99,6 +100,13 @@ end;
 procedure TViewPrincipal.btnFornecedoresClick(Sender: TObject);
 begin // Fornecedores
   GET_LineMENU(Sender); // Parâmetro da função
+  ViewFornecedores := TViewFornecedores.Create(Self); // Cria o formulario fornecedores
+  try
+    ViewFornecedores.Tag := 2;
+    ViewFornecedores.ShowModal; // Mostra o formulario
+  finally
+    FreeAndNil(ViewFornecedores); // Limpa da memória
+  end;
 end;
 
 procedure TViewPrincipal.btnSairClick(Sender: TObject);

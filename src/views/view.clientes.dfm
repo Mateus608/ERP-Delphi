@@ -1,7 +1,5 @@
 inherited ViewClientes: TViewClientes
   Caption = 'ViewClientes'
-  OnCreate = FormCreate
-  ExplicitLeft = -164
   TextHeight = 15
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
