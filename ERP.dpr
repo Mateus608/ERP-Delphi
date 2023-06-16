@@ -7,7 +7,8 @@ uses
   service.cadastro in 'src\services\service.cadastro.pas' {ServiceCadastro: TDataModule},
   provider.constants in 'src\providers\provider.constants.pas',
   view.base in 'src\views\view.base.pas' {ViewBase},
-  view.base.listas in 'src\views\view.base.listas.pas' {ViewBaseListas};
+  view.base.listas in 'src\views\view.base.listas.pas' {ViewBaseListas},
+  view.clientes in 'src\views\view.clientes.pas' {ViewClientes};
 
 {$R *.res}
 
@@ -17,6 +18,5 @@ begin
   Application.CreateForm(TViewPrincipal, ViewPrincipal);
   Application.CreateForm(TServiceConexao, ServiceConexao);
   Application.CreateForm(TServiceCadastro, ServiceCadastro);
-  Application.CreateForm(TViewBaseListas, ViewBaseListas);
   Application.Run;
 end.

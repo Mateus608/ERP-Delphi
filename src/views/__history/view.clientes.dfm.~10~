@@ -1,0 +1,71 @@
+inherited ViewClientes: TViewClientes
+  Caption = 'ViewClientes'
+  OnCreate = FormCreate
+  TextHeight = 15
+  inherited pnlTopo: TPanel
+    ExplicitWidth = 780
+    inherited lblTitulo: TLabel
+      Width = 667
+      Height = 29
+      Caption = 'Clientes'
+      ExplicitWidth = 68
+    end
+    inherited pnlFechar: TPanel
+      ExplicitLeft = 708
+    end
+  end
+  inherited pnlRodape: TPanel
+    ExplicitWidth = 780
+  end
+  inherited pnlLinhaFundo: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 35
+    ExplicitWidth = 780
+    ExplicitHeight = 405
+    inherited CardPanelListas: TCardPanel
+      ExplicitLeft = 1
+      ExplicitTop = 0
+      ExplicitWidth = 778
+      ExplicitHeight = 405
+      inherited CardPesquisa: TCard
+        ExplicitWidth = 778
+        ExplicitHeight = 405
+      end
+      inherited CardCadastro: TCard
+        ExplicitTop = 0
+        inherited DBGDados: TDBGrid
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'PES_CODIGO'
+              Title.Caption = 'C'#243'digo'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PES_RAZAO'
+              Title.Caption = 'Nome do Cliente'
+              Width = 388
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PES_TELEFONE'
+              Title.Caption = 'Telefone'
+              Width = 181
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PES_CNPJCPF'
+              Title.Caption = 'CNPJ / CPF'
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+  inherited DSDados: TDataSource
+    DataSet = ServiceCadastro.QRYPessoas
+  end
+end

@@ -15,6 +15,7 @@ object ServiceCadastro: TServiceCadastro
         Value = Null
       end>
     object QRYPessoasPES_CODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
       FieldName = 'PES_CODIGO'
       Origin = 'PES_CODIGO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]

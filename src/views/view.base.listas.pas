@@ -24,13 +24,13 @@ type
     btnExcluir: TSpeedButton;
     pnlLinhaFundo: TPanel;
     CardPanelListas: TCardPanel;
-    CardPesquisa: TCard;
     CardCadastro: TCard;
     pnlTituloPesquisa: TPanel;
     lblTituloPesquisa: TLabel;
     edtPesquisa: TSearchBox;
     DBGDados: TDBGrid;
     DSDados: TDataSource;
+    CardPesquisa: TCard;
     procedure btnSairClick(Sender: TObject);
     procedure pnlTopoMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -64,11 +64,10 @@ procedure TViewBaseListas.pnlTopoMouseDown(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
   // Mover o formulario sem bordas
 const
-  sc_DragMove = $f012;
+   sc_DragMove = $f012;
 begin
-  inherited;
-    RelaseCapture;
-    Perform(wm_SysCommand, sc_DragMove, 0);
+  ReleaseCapture;
+  Perform(wm_SysCommand, sc_DragMove, 0);
 end;
 
 end.

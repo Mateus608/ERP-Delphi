@@ -1,16 +1,17 @@
 inherited ViewBaseListas: TViewBaseListas
   BorderStyle = bsNone
   Caption = 'ViewBaseListas'
-  ClientHeight = 480
-  ClientWidth = 780
+  ClientHeight = 550
+  ClientWidth = 1050
   Position = poMainFormCenter
   OnShow = FormShow
-  ExplicitWidth = 780
+  ExplicitWidth = 1050
+  ExplicitHeight = 550
   TextHeight = 15
   object pnlTopo: TPanel
     Left = 0
     Top = 0
-    Width = 780
+    Width = 1050
     Height = 35
     Align = alTop
     BevelOuter = bvNone
@@ -18,12 +19,12 @@ inherited ViewBaseListas: TViewBaseListas
     ParentBackground = False
     TabOrder = 0
     OnMouseDown = pnlTopoMouseDown
-    ExplicitWidth = 640
+    ExplicitWidth = 780
     object lblTitulo: TLabel
       AlignWithMargins = True
       Left = 38
       Top = 3
-      Width = 667
+      Width = 937
       Height = 29
       Cursor = crHandPoint
       Align = alClient
@@ -100,14 +101,14 @@ inherited ViewBaseListas: TViewBaseListas
       end
     end
     object pnlFechar: TPanel
-      Left = 708
+      Left = 978
       Top = 0
       Width = 72
       Height = 35
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 568
+      ExplicitLeft = 708
       object btnSair: TSpeedButton
         AlignWithMargins = True
         Left = 3
@@ -133,18 +134,19 @@ inherited ViewBaseListas: TViewBaseListas
   end
   object pnlRodape: TPanel
     Left = 0
-    Top = 440
-    Width = 780
+    Top = 510
+    Width = 1050
     Height = 40
     Align = alBottom
     BevelOuter = bvNone
     Color = 7500402
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 640
+    ExplicitTop = 440
+    ExplicitWidth = 780
     object btnNovo: TSpeedButton
       AlignWithMargins = True
-      Left = 312
+      Left = 582
       Top = 3
       Width = 82
       Height = 34
@@ -164,7 +166,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnEditar: TSpeedButton
       AlignWithMargins = True
-      Left = 400
+      Left = 670
       Top = 3
       Width = 82
       Height = 34
@@ -183,7 +185,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnCancelar: TSpeedButton
       AlignWithMargins = True
-      Left = 488
+      Left = 758
       Top = 3
       Width = 106
       Height = 34
@@ -202,7 +204,7 @@ inherited ViewBaseListas: TViewBaseListas
     end
     object btnSalvar: TSpeedButton
       AlignWithMargins = True
-      Left = 696
+      Left = 966
       Top = 3
       Width = 81
       Height = 34
@@ -217,10 +219,11 @@ inherited ViewBaseListas: TViewBaseListas
       Font.Name = 'Segoe UI Semibold'
       Font.Style = [fsBold]
       ParentFont = False
+      ExplicitLeft = 696
     end
     object btnExcluir: TSpeedButton
       AlignWithMargins = True
-      Left = 600
+      Left = 870
       Top = 3
       Width = 90
       Height = 34
@@ -241,67 +244,75 @@ inherited ViewBaseListas: TViewBaseListas
   object pnlLinhaFundo: TPanel
     Left = 0
     Top = 35
-    Width = 780
-    Height = 405
+    Width = 1050
+    Height = 475
     Align = alClient
     BevelOuter = bvNone
     Color = 7500402
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 320
-    ExplicitTop = 168
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    ExplicitWidth = 780
+    ExplicitHeight = 405
     object CardPanelListas: TCardPanel
       AlignWithMargins = True
       Left = 1
       Top = 0
-      Width = 778
-      Height = 405
+      Width = 1048
+      Height = 475
       Margins.Left = 1
       Margins.Top = 0
       Margins.Right = 1
       Margins.Bottom = 0
       Align = alClient
-      ActiveCard = CardCadastro
+      ActiveCard = CardPesquisa
       BevelOuter = bvNone
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 560
-      ExplicitTop = 224
-      ExplicitWidth = 300
-      ExplicitHeight = 200
+      ExplicitWidth = 778
+      ExplicitHeight = 405
       object CardPesquisa: TCard
         Left = 0
         Top = 0
-        Width = 778
-        Height = 405
+        Width = 1048
+        Height = 475
         Caption = 'CardPesquisa'
         CardIndex = 0
-        TabOrder = 0
-        ExplicitWidth = 185
-        ExplicitHeight = 41
-      end
-      object CardCadastro: TCard
-        Left = 0
-        Top = 0
-        Width = 778
-        Height = 405
-        Caption = 'CardCadastro'
-        CardIndex = 1
         TabOrder = 1
-        ExplicitTop = -3
+        ExplicitWidth = 778
+        ExplicitHeight = 405
+        object DBGDados: TDBGrid
+          AlignWithMargins = True
+          Left = 5
+          Top = 105
+          Width = 1038
+          Height = 365
+          Margins.Left = 5
+          Margins.Top = 5
+          Margins.Right = 5
+          Margins.Bottom = 5
+          Align = alClient
+          BorderStyle = bsNone
+          DataSource = DSDados
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
+        end
         object pnlTituloPesquisa: TPanel
           Left = 0
           Top = 0
-          Width = 778
+          Width = 1048
           Height = 100
           Align = alTop
           BevelOuter = bvNone
           Color = 15461355
           ParentBackground = False
-          TabOrder = 0
+          TabOrder = 1
+          ExplicitWidth = 778
           object lblTituloPesquisa: TLabel
             Left = 24
             Top = 14
@@ -332,27 +343,17 @@ inherited ViewBaseListas: TViewBaseListas
             TextHint = 'Digite sua pesquisa'
           end
         end
-        object DBGDados: TDBGrid
-          AlignWithMargins = True
-          Left = 5
-          Top = 105
-          Width = 768
-          Height = 295
-          Margins.Left = 5
-          Margins.Top = 5
-          Margins.Right = 5
-          Margins.Bottom = 5
-          Align = alClient
-          BorderStyle = bsNone
-          DataSource = DSDados
-          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-          TabOrder = 1
-          TitleFont.Charset = DEFAULT_CHARSET
-          TitleFont.Color = clWindowText
-          TitleFont.Height = -12
-          TitleFont.Name = 'Segoe UI'
-          TitleFont.Style = []
-        end
+      end
+      object CardCadastro: TCard
+        Left = 0
+        Top = 0
+        Width = 1048
+        Height = 475
+        Caption = 'CardCadastro'
+        CardIndex = 1
+        TabOrder = 0
+        ExplicitWidth = 778
+        ExplicitHeight = 405
       end
     end
   end

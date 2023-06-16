@@ -1,0 +1,49 @@
+inherited ViewClientes: TViewClientes
+  Caption = 'ViewClientes'
+  OnCreate = FormCreate
+  TextHeight = 15
+  inherited pnlTopo: TPanel
+    inherited lblTitulo: TLabel
+      Caption = 'Clientes'
+      ExplicitWidth = 68
+    end
+  end
+  inherited pnlLinhaFundo: TPanel
+    inherited CardPanelListas: TCardPanel
+      inherited CardPesquisa: TCard
+        inherited DBGDados: TDBGrid
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'PES_CODIGO'
+              Title.Caption = 'C'#243'digo'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PES_RAZAO'
+              Title.Caption = 'Nome do Cliente'
+              Width = 362
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PES_TELEFONE'
+              Title.Caption = 'Telefone'
+              Width = 160
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PES_CNPJCPF'
+              Title.Caption = 'CNPJ / CPF'
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+  inherited DSDados: TDataSource
+    DataSet = ServiceCadastro.QRYPessoas
+  end
+end
