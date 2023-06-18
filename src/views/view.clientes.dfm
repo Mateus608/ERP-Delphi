@@ -7,26 +7,8 @@ inherited ViewClientes: TViewClientes
       ExplicitWidth = 68
     end
   end
-  inherited pnlRodape: TPanel
-    inherited btnNovo: TSpeedButton
-      OnClick = btnNovoClick
-    end
-    inherited btnEditar: TSpeedButton
-      OnClick = btnEditarClick
-    end
-    inherited btnCancelar: TSpeedButton
-      OnClick = btnCancelarClick
-    end
-    inherited btnSalvar: TSpeedButton
-      OnClick = btnSalvarClick
-    end
-    inherited btnExcluir: TSpeedButton
-      OnClick = btnExcluirClick
-    end
-  end
   inherited pnlLinhaFundo: TPanel
     inherited CardPanelListas: TCardPanel
-      ActiveCard = CardCadastro
       inherited CardPesquisa: TCard
         inherited DBGDados: TDBGrid
           Columns = <
@@ -60,8 +42,6 @@ inherited ViewClientes: TViewClientes
       end
       inherited CardCadastro: TCard
         ExplicitTop = 3
-        ExplicitWidth = 1048
-        ExplicitHeight = 475
         object Label1: TLabel
           Left = 24
           Top = 90
@@ -77,8 +57,8 @@ inherited ViewClientes: TViewClientes
           ParentFont = False
         end
         object Label2: TLabel
-          Left = 337
-          Top = 88
+          Left = 118
+          Top = 90
           Width = 124
           Height = 21
           Caption = 'Nome do Cliente'
@@ -91,8 +71,8 @@ inherited ViewClientes: TViewClientes
           ParentFont = False
         end
         object Label3: TLabel
-          Left = 24
-          Top = 154
+          Left = 536
+          Top = 89
           Width = 106
           Height = 21
           Caption = 'Nome Fantasia'
@@ -105,8 +85,8 @@ inherited ViewClientes: TViewClientes
           ParentFont = False
         end
         object Label4: TLabel
-          Left = 448
-          Top = 154
+          Left = 24
+          Top = 153
           Width = 63
           Height = 21
           Caption = 'Telefone'
@@ -119,8 +99,8 @@ inherited ViewClientes: TViewClientes
           ParentFont = False
         end
         object Label5: TLabel
-          Left = 120
-          Top = 90
+          Left = 243
+          Top = 154
           Width = 78
           Height = 21
           Caption = 'CNPJ / CPF'
@@ -133,8 +113,8 @@ inherited ViewClientes: TViewClientes
           ParentFont = False
         end
         object Label6: TLabel
-          Left = 759
-          Top = 90
+          Left = 461
+          Top = 154
           Width = 34
           Height = 21
           Caption = 'IERG'
@@ -170,10 +150,9 @@ inherited ViewClientes: TViewClientes
           Color = 15461355
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 778
           object lblTituloCadastro: TLabel
             Left = 24
-            Top = 14
+            Top = 17
             Width = 169
             Height = 25
             Caption = 'Cadastro de Clientes'
@@ -192,9 +171,10 @@ inherited ViewClientes: TViewClientes
           Height = 23
           DataField = 'PES_CODIGO'
           DataSource = DSDados
+          Enabled = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -16
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
@@ -202,7 +182,7 @@ inherited ViewClientes: TViewClientes
           TabOrder = 1
         end
         object DBEdit2: TDBEdit
-          Left = 337
+          Left = 118
           Top = 118
           Width = 400
           Height = 23
@@ -212,8 +192,8 @@ inherited ViewClientes: TViewClientes
           TabOrder = 2
         end
         object DBEdit3: TDBEdit
-          Left = 24
-          Top = 183
+          Left = 536
+          Top = 118
           Width = 400
           Height = 23
           CharCase = ecUpperCase
@@ -222,8 +202,8 @@ inherited ViewClientes: TViewClientes
           TabOrder = 3
         end
         object DBEdit4: TDBEdit
-          Left = 448
-          Top = 183
+          Left = 24
+          Top = 182
           Width = 200
           Height = 23
           CharCase = ecUpperCase
@@ -232,24 +212,24 @@ inherited ViewClientes: TViewClientes
           TabOrder = 4
         end
         object edtPES_CNPJCPF: TDBEdit
-          Left = 120
-          Top = 118
+          Left = 243
+          Top = 182
           Width = 200
-          Height = 29
+          Height = 23
           CharCase = ecUpperCase
           DataField = 'PES_CNPJCPF'
           DataSource = DSDados
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -16
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
           TabOrder = 5
         end
         object DBEdit6: TDBEdit
-          Left = 759
-          Top = 118
+          Left = 461
+          Top = 182
           Width = 200
           Height = 23
           CharCase = ecUpperCase
@@ -272,7 +252,7 @@ inherited ViewClientes: TViewClientes
   end
   inherited DSDados: TDataSource
     DataSet = ServiceCadastro.QRYPessoas
-    Left = 697
-    Top = 51
+    Left = 857
+    Top = 75
   end
 end

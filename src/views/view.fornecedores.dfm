@@ -42,8 +42,8 @@ inherited ViewFornecedores: TViewFornecedores
         end
       end
       inherited CardCadastro: TCard
-        ExplicitWidth = 1048
-        ExplicitHeight = 475
+        ExplicitLeft = -32
+        ExplicitTop = -6
         object Label1: TLabel
           Left = 24
           Top = 90
@@ -59,7 +59,7 @@ inherited ViewFornecedores: TViewFornecedores
           ParentFont = False
         end
         object Label2: TLabel
-          Left = 337
+          Left = 119
           Top = 88
           Width = 158
           Height = 21
@@ -73,8 +73,8 @@ inherited ViewFornecedores: TViewFornecedores
           ParentFont = False
         end
         object Label3: TLabel
-          Left = 24
-          Top = 154
+          Left = 559
+          Top = 89
           Width = 106
           Height = 21
           Caption = 'Nome Fantasia'
@@ -87,7 +87,7 @@ inherited ViewFornecedores: TViewFornecedores
           ParentFont = False
         end
         object Label4: TLabel
-          Left = 448
+          Left = 24
           Top = 154
           Width = 63
           Height = 21
@@ -101,8 +101,8 @@ inherited ViewFornecedores: TViewFornecedores
           ParentFont = False
         end
         object Label5: TLabel
-          Left = 120
-          Top = 90
+          Left = 243
+          Top = 155
           Width = 78
           Height = 21
           Caption = 'CNPJ / CPF'
@@ -115,8 +115,8 @@ inherited ViewFornecedores: TViewFornecedores
           ParentFont = False
         end
         object Label6: TLabel
-          Left = 759
-          Top = 90
+          Left = 463
+          Top = 155
           Width = 34
           Height = 21
           Caption = 'IERG'
@@ -152,7 +152,6 @@ inherited ViewFornecedores: TViewFornecedores
           Color = 15461355
           ParentBackground = False
           TabOrder = 0
-          ExplicitTop = 8
           object lblTituloCadastro: TLabel
             Left = 24
             Top = 14
@@ -174,9 +173,10 @@ inherited ViewFornecedores: TViewFornecedores
           Height = 23
           DataField = 'PES_CODIGO'
           DataSource = DSDados
+          Enabled = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -16
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
@@ -184,7 +184,7 @@ inherited ViewFornecedores: TViewFornecedores
           TabOrder = 1
         end
         object DBEdit2: TDBEdit
-          Left = 337
+          Left = 119
           Top = 118
           Width = 400
           Height = 23
@@ -194,8 +194,8 @@ inherited ViewFornecedores: TViewFornecedores
           TabOrder = 2
         end
         object DBEdit3: TDBEdit
-          Left = 24
-          Top = 183
+          Left = 559
+          Top = 118
           Width = 400
           Height = 23
           CharCase = ecUpperCase
@@ -204,7 +204,7 @@ inherited ViewFornecedores: TViewFornecedores
           TabOrder = 3
         end
         object DBEdit4: TDBEdit
-          Left = 448
+          Left = 24
           Top = 183
           Width = 200
           Height = 23
@@ -214,24 +214,24 @@ inherited ViewFornecedores: TViewFornecedores
           TabOrder = 4
         end
         object edtPES_CNPJCPF: TDBEdit
-          Left = 120
-          Top = 118
+          Left = 243
+          Top = 183
           Width = 200
-          Height = 29
+          Height = 23
           CharCase = ecUpperCase
           DataField = 'PES_CNPJCPF'
           DataSource = DSDados
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -16
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
           TabOrder = 5
         end
         object DBEdit6: TDBEdit
-          Left = 759
-          Top = 118
+          Left = 463
+          Top = 183
           Width = 200
           Height = 23
           CharCase = ecUpperCase
@@ -254,5 +254,7 @@ inherited ViewFornecedores: TViewFornecedores
   end
   inherited DSDados: TDataSource
     DataSet = ServiceCadastro.QRYPessoas
+    Left = 704
+    Top = 59
   end
 end

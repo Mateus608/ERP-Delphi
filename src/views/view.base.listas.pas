@@ -59,9 +59,9 @@ procedure TViewBaseListas.btnCancelarClick(Sender: TObject);
 begin // Cancelar
   inherited;
   // Verifica o estado dela(se esta em modo de edição)
-  if ServiceCadastro.QRYPessoas.State in dsEditModes then
+  if dsDados.DataSet.State in dsEditModes then
     begin
-      ServiceCadastro.QRYPessoas.Cancel; // Cancela a ação no BD
+      dsDados.DataSet.Cancel; // Cancela a ação no BD
       CardPanelListas.ActiveCard := CardPesquisa; // Retorna para a tela de pesquisa no CardPanel
     end;
 end;
@@ -70,30 +70,38 @@ procedure TViewBaseListas.btnEditarClick(Sender: TObject);
 begin // Editar
   inherited;
   CardPanelListas.ActiveCard := CardCadastro; // Chama a tela de cadastro no CardPanel
-  ServiceCadastro.QRYPessoas.Edit; // Coloca a qry em modo de edição
+  dsDados.DataSet.Edit; // Coloca a qry em modo de edição
 end;
 
 procedure TViewBaseListas.btnExcluirClick(Sender: TObject);
 begin // Excluir
   inherited;
   // Verifica se a quantidade de informações é maior que 0
-  if ServiceCadastro.QRYPessoas.RecordCount > 0 then
+  if dsDados.DataSet.RecordCount > 0 then
     begin
-      ServiceCadastro.QRYPessoas.Delete; // Deleta o cliente do BD
 
-      // Dispara a mensagem ao salvar baseado na tag do formulario
-      case Self.Tag of
-        1: begin
-          ShowMessage('Cliente excluido com sucesso.');
-        end;
+      dsDados.DataSet.Delete; // Deleta o cliente do BD
 
-        2: begin
-          ShowMessage('Forncedor excluido com sucesso.');
-        end;
+      if Self.Tag > 0 then // Se a tag foi maior que 0
+      begin
 
-        3: begin
-          ShowMessage('Funcionario excluido com sucesso.');
+        // Dispara a mensagem ao salvar baseado na tag do formulario
+        case Self.Tag of
+          1: begin
+            ShowMessage('Cliente excluido com sucesso.');
+          end;
+
+          2: begin
+            ShowMessage('Forncedor excluido com sucesso.');
+          end;
+
+          3: begin
+            ShowMessage('Funcionario excluido com sucesso.');
+          end;
         end;
+      end
+      else begin
+        ShowMessage('Dados deletados com sucesso.');
       end;
 
       CardPanelListas.ActiveCard := CardPesquisa; // Retorna para a tela de pesquisa no CardPanel
@@ -104,7 +112,7 @@ procedure TViewBaseListas.btnNovoClick(Sender: TObject);
 begin // Novo
   inherited;
   CardPanelListas.ActiveCard := CardCadastro; // Chama a tela de cadastro no CardPanel
-  ServiceCadastro.QRYPessoas.Insert; // Coloca a qry em modo de inserção
+  dsDados.DataSet.Insert; // Coloca a qry em modo de inserção
 end;
 
 procedure TViewBaseListas.btnSairClick(Sender: TObject);
@@ -117,24 +125,31 @@ procedure TViewBaseListas.btnSalvarClick(Sender: TObject);
 begin // Salvar
   inherited;
   // Verifica o estado dela(se esta em modo de edição)
-  if ServiceCadastro.QRYPessoas.State in dsEditModes then
+  if dsDados.DataSet.State in dsEditModes then
     begin
-      ServiceCadastro.QRYPessoasPES_TIPOPESSOA.AsInteger := Self.Tag; // Ele salva o registro com o tipo pessoa baseado na tag do formulario
-      ServiceCadastro.QRYPessoas.Post; // Salva - Atualiza no BD
+      if Self.Tag > 0 then // Se a tag foi maior que 0
+      begin
+        ServiceCadastro.QRYPessoasPES_TIPOPESSOA.AsInteger := Self.Tag; // Ele salva o registro com o tipo pessoa baseado na tag do formulario
+        ServiceCadastro.QRYPessoas.Post; // Salva - Atualiza no BD
 
-      // Dispara a mensagem ao salvar baseado na tag do formulario
-      case Self.Tag of
-        1: begin
-          ShowMessage('Cliente salvo com sucesso.');
-        end;
+       // Dispara a mensagem ao salvar baseado na tag do formulario
+        case Self.Tag of
+          1: begin
+           ShowMessage('Cliente salvo com sucesso.');
+          end;
 
-        2: begin
-          ShowMessage('Forncedor salvo com sucesso.');
-        end;
+          2: begin
+            ShowMessage('Forncedor salvo com sucesso.');
+          end;
 
-        3: begin
-          ShowMessage('Funcionario salvo com sucesso.');
+          3: begin
+           ShowMessage('Funcionario salvo com sucesso.');
+          end;
         end;
+      end
+      else begin
+        dsDados.DataSet.Post; // Irá salvar as mudanças no dataset sem precisar definir a QRY
+        ShowMessage('Dados salvos com sucesso.');
       end;
 
       CardPanelListas.ActiveCard := CardPesquisa; // Retorna para a tela de pesquisa no CardPanel

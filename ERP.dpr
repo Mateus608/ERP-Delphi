@@ -9,7 +9,9 @@ uses
   view.base in 'src\views\view.base.pas' {ViewBase},
   view.base.listas in 'src\views\view.base.listas.pas' {ViewBaseListas},
   view.clientes in 'src\views\view.clientes.pas' {ViewClientes},
-  view.fornecedores in 'src\views\view.fornecedores.pas' {ViewFornecedores};
+  view.fornecedores in 'src\views\view.fornecedores.pas' {ViewFornecedores},
+  provider.conversao in 'src\providers\provider.conversao.pas',
+  view.produtos in 'src\views\view.produtos.pas' {ViewProdutos};
 
 {$R *.res}
 
@@ -19,6 +21,5 @@ begin
   Application.CreateForm(TViewPrincipal, ViewPrincipal);
   Application.CreateForm(TServiceConexao, ServiceConexao);
   Application.CreateForm(TServiceCadastro, ServiceCadastro);
-  Application.CreateForm(TViewFornecedores, ViewFornecedores);
   Application.Run;
 end.

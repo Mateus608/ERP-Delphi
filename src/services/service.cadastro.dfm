@@ -1,12 +1,12 @@
 object ServiceCadastro: TServiceCadastro
-  Height = 269
-  Width = 451
+  Height = 131
+  Width = 341
   object QRYPessoas: TFDQuery
     Connection = ServiceConexao.FDConexao
     SQL.Strings = (
       'select * from pessoas where pes_codigo = :codigo;')
-    Left = 112
-    Top = 64
+    Left = 32
+    Top = 32
     ParamData = <
       item
         Name = 'CODIGO'
@@ -60,8 +60,8 @@ object ServiceCadastro: TServiceCadastro
     Connection = ServiceConexao.FDConexao
     SQL.Strings = (
       '  select * from endereco where end_codigo = :codigo;')
-    Left = 200
-    Top = 64
+    Left = 112
+    Top = 32
     ParamData = <
       item
         Name = 'CODIGO'
@@ -106,6 +106,121 @@ object ServiceCadastro: TServiceCadastro
     object QRYEnderecosEND_NUMERO: TStringField
       FieldName = 'END_NUMERO'
       Origin = 'END_NUMERO'
+    end
+  end
+  object QRYProduto1: TFDQuery
+    Connection = ServiceConexao.FDConexao
+    SQL.Strings = (
+      'select * from produto1 where pr1_codigo = :codigo')
+    Left = 192
+    Top = 32
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object QRYProduto1PR1_CODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'PR1_CODIGO'
+      Origin = 'PR1_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRYProduto1PR1_NOMECOMPLETO: TStringField
+      FieldName = 'PR1_NOMECOMPLETO'
+      Origin = 'PR1_NOMECOMPLETO'
+      Size = 100
+    end
+    object QRYProduto1PR1_NOMEPOPULAR: TStringField
+      FieldName = 'PR1_NOMEPOPULAR'
+      Origin = 'PR1_NOMEPOPULAR'
+      Size = 100
+    end
+    object QRYProduto1PR1_CODIGOBARRA: TStringField
+      FieldName = 'PR1_CODIGOBARRA'
+      Origin = 'PR1_CODIGOBARRA'
+      Size = 50
+    end
+    object QRYProduto1PR1_REFERENCIA: TStringField
+      FieldName = 'PR1_REFERENCIA'
+      Origin = 'PR1_REFERENCIA'
+      Size = 50
+    end
+    object QRYProduto1PR1_GRUPO: TIntegerField
+      FieldName = 'PR1_GRUPO'
+      Origin = 'PR1_GRUPO'
+    end
+    object QRYProduto1PR1_SUBGRUPO: TIntegerField
+      FieldName = 'PR1_SUBGRUPO'
+      Origin = 'PR1_SUBGRUPO'
+    end
+    object QRYProduto1PR1_NCM: TStringField
+      FieldName = 'PR1_NCM'
+      Origin = 'PR1_NCM'
+      Size = 10
+    end
+  end
+  object QRYProduto2: TFDQuery
+    Connection = ServiceConexao.FDConexao
+    SQL.Strings = (
+      'select * from produto2 where pr2_codigo = :codigo')
+    Left = 272
+    Top = 32
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object QRYProduto2PR2_CODIGO: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'PR2_CODIGO'
+      Origin = 'PR2_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRYProduto2PR2_CODIGOPR1: TIntegerField
+      FieldName = 'PR2_CODIGOPR1'
+      Origin = 'PR2_CODIGOPR1'
+    end
+    object QRYProduto2PR2_FILIAL: TIntegerField
+      FieldName = 'PR2_FILIAL'
+      Origin = 'PR2_FILIAL'
+    end
+    object QRYProduto2PR2_CUSTOINI: TFMTBCDField
+      FieldName = 'PR2_CUSTOINI'
+      Origin = 'PR2_CUSTOINI'
+      currency = True
+      Precision = 18
+      Size = 2
+    end
+    object QRYProduto2PR2_VENDAVISTA: TFMTBCDField
+      FieldName = 'PR2_VENDAVISTA'
+      Origin = 'PR2_VENDAVISTA'
+      currency = True
+      Precision = 18
+      Size = 2
+    end
+    object QRYProduto2PR2_VENDAPRAZO: TFMTBCDField
+      FieldName = 'PR2_VENDAPRAZO'
+      Origin = 'PR2_VENDAPRAZO'
+      currency = True
+      Precision = 18
+      Size = 2
+    end
+    object QRYProduto2PR2_SITRIBUTARIA: TIntegerField
+      FieldName = 'PR2_SITRIBUTARIA'
+      Origin = 'PR2_SITRIBUTARIA'
+    end
+    object QRYProduto2PR2_ESTOQUE: TFMTBCDField
+      Alignment = taCenter
+      FieldName = 'PR2_ESTOQUE'
+      Origin = 'PR2_ESTOQUE'
+      Precision = 18
+      Size = 2
     end
   end
 end

@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons,
   Vcl.Imaging.pngimage, System.Actions, Vcl.ActnList, System.ImageList,
-  Vcl.ImgList, provider.constants, view.clientes, view.fornecedores;
+  Vcl.ImgList, provider.constants, view.clientes, view.fornecedores,
+  provider.conversao, view.produtos;
 
 type
   TViewPrincipal = class(TForm)
@@ -46,6 +47,7 @@ type
     btnConfig: TSpeedButton;
     btnSair: TSpeedButton;
     imgUserLaranja: TImage;
+    Image1: TImage;
     procedure btnSairClick(Sender: TObject);
     procedure btnClientesClick(Sender: TObject);
     procedure btnCaixaClick(Sender: TObject);
@@ -73,6 +75,12 @@ implementation
 procedure TViewPrincipal.bntProdutosClick(Sender: TObject);
 begin // Produtos
   GET_LineMENU(Sender); // Parâmetro da função
+  ViewProdutos := TViewProdutos.Create(Self); // Cria o formulario produtos
+  try
+    ViewProdutos.ShowModal; // Mostra o formulario
+  finally
+    FreeAndNil(ViewProdutos); // Limpa da memória
+  end;
 end;
 
 procedure TViewPrincipal.btnCaixaClick(Sender: TObject);
@@ -85,7 +93,7 @@ begin // Clientes
   GET_LineMENU(Sender); // Parâmetro da função
   ViewClientes := TViewClientes.Create(Self); // Cria o formulario clientes
   try
-    ViewClientes.Tag := 1; // O Formulario Clientes recebe a Tag 1
+    ViewClientes.Tag := PessoasToInt(tpClientes); // O Formulario Clientes recebe a Tag 1 (Definido no provider.conversao)
     ViewClientes.ShowModal; // Mostra o formulario
   finally
     FreeAndNil(ViewClientes); // Limpa da memória
@@ -102,7 +110,7 @@ begin // Fornecedores
   GET_LineMENU(Sender); // Parâmetro da função
   ViewFornecedores := TViewFornecedores.Create(Self); // Cria o formulario fornecedores
   try
-    ViewFornecedores.Tag := 2;
+    ViewFornecedores.Tag := PessoasToInt(tpFuncionarios); // O Formulario Funcionarios recebe a Tag 1 (Definido no provider.conversao)
     ViewFornecedores.ShowModal; // Mostra o formulario
   finally
     FreeAndNil(ViewFornecedores); // Limpa da memória

@@ -47,11 +47,16 @@ inherited ViewBaseListas: TViewBaseListas
       BevelOuter = bvNone
       TabOrder = 0
       object ImgIcon: TImage
-        Left = 0
-        Top = 0
-        Width = 35
-        Height = 35
+        AlignWithMargins = True
+        Left = 5
+        Top = 5
+        Width = 25
+        Height = 25
         Cursor = crHandPoint
+        Margins.Left = 5
+        Margins.Top = 5
+        Margins.Right = 5
+        Margins.Bottom = 5
         Align = alClient
         Center = True
         Picture.Data = {
@@ -283,6 +288,7 @@ inherited ViewBaseListas: TViewBaseListas
           Top = 105
           Width = 1038
           Height = 365
+          Cursor = crHandPoint
           Margins.Left = 5
           Margins.Top = 5
           Margins.Right = 5
@@ -347,8 +353,6 @@ inherited ViewBaseListas: TViewBaseListas
         Caption = 'CardCadastro'
         CardIndex = 1
         TabOrder = 0
-        ExplicitWidth = 778
-        ExplicitHeight = 405
       end
     end
   end
