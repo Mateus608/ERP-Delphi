@@ -1,4 +1,0 @@
-object ServiceConexao: TServiceConexao
-  Height = 416
-  Width = 640
-end

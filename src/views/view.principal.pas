@@ -78,6 +78,7 @@ begin // Produtos
   ViewProdutos := TViewProdutos.Create(Self); // Cria o formulario produtos
   try
     ViewProdutos.ShowModal; // Mostra o formulario
+    ViewProdutos.sTela := TelasToStr(tpProdutos); // Armazena o parâmetro da função na variavel e identifica a tela (ShowMessage)
   finally
     FreeAndNil(ViewProdutos); // Limpa da memória
   end;

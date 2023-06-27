@@ -15,7 +15,7 @@ inherited ViewBaseListas: TViewBaseListas
     Height = 35
     Align = alTop
     BevelOuter = bvNone
-    Color = 5395026
+    Color = 6836540
     ParentBackground = False
     TabOrder = 0
     OnMouseDown = pnlTopoMouseDown
@@ -97,6 +97,7 @@ inherited ViewBaseListas: TViewBaseListas
           393138322D627573696E6573732D636F6D70757465722D6465766963652D6F66
           666963652D746563686E6F6C6F67795F3131323732322E706E674085F5760000
           000049454E44AE426082}
+        Stretch = True
         OnMouseDown = pnlTopoMouseDown
         ExplicitLeft = 16
         ExplicitTop = 16
@@ -142,7 +143,7 @@ inherited ViewBaseListas: TViewBaseListas
     Height = 40
     Align = alBottom
     BevelOuter = bvNone
-    Color = 7500402
+    Color = 8874318
     ParentBackground = False
     TabOrder = 1
     object btnNovo: TSpeedButton

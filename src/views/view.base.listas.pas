@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, view.base, Vcl.ExtCtrls,
   Vcl.Imaging.pngimage, Vcl.Buttons, Vcl.StdCtrls, Vcl.WinXPanels, Data.DB,
-  Vcl.Grids, Vcl.DBGrids, Vcl.WinXCtrls, service.cadastro, provider.constants;
+  Vcl.Grids, Vcl.DBGrids, Vcl.WinXCtrls, service.cadastro, provider.constants,
+  provider.conversao, view.mensagens;
 
 type
   TViewBaseListas = class(TViewBase)
@@ -45,7 +46,8 @@ type
   private
     { Private declarations }
   public
-    { Public declarations }
+    var
+      sTela: String;
   end;
 
 var
@@ -80,30 +82,60 @@ begin // Excluir
   if dsDados.DataSet.RecordCount > 0 then
     begin
 
-      dsDados.DataSet.Delete; // Deleta o cliente do BD
-
       if Self.Tag > 0 then // Se a tag foi maior que 0
       begin
 
         // Dispara a mensagem ao salvar baseado na tag do formulario
         case Self.Tag of
           1: begin
-            ShowMessage('Cliente excluido com sucesso.');
+            if TViewMensagens.Mensagem('Deseja excluir esse cliente?', 'Excluir', 'E', [mbSim, mbNao]) then
+              begin
+                dsDados.DataSet.Delete; // Deleta o cliente do BD
+                TViewMensagens.Mensagem('Cliente exluído com sucesso', 'Excluir', 'S', [mbOk]);
+              end;
           end;
 
           2: begin
-            ShowMessage('Forncedor excluido com sucesso.');
+             if TViewMensagens.Mensagem('Deseja excluir esse forncedor?', 'Excluir', 'E', [mbSim, mbNao]) then
+              begin
+                dsDados.DataSet.Delete; // Deleta o fornecedor do BD
+                TViewMensagens.Mensagem('Forncedor exluído com sucesso', 'Excluir', 'S', [mbOk]);
+              end;
           end;
 
           3: begin
-            ShowMessage('Funcionario excluido com sucesso.');
+             if TViewMensagens.Mensagem('Deseja excluir esse funcionário?', 'Excluir', 'E', [mbSim, mbNao]) then
+              begin
+                dsDados.DataSet.Delete; // Deleta o funcionario do BD
+                TViewMensagens.Mensagem('Funcionário exluído com sucesso', 'Excluir', 'S', [mbOk]);
+              end;
           end;
         end;
       end
       else begin
-        ShowMessage('Dados deletados com sucesso.');
-      end;
 
+        if sTela = TelasToStr(tpProdutos) then
+        begin
+          TViewMensagens.Mensagem('Produto exluído com sucesso', 'Excluir', 'E', [mbOk]);
+        end;
+
+        if sTela = TelasToStr(tpCaixa) then
+        begin
+          TViewMensagens.Mensagem('Caixa exluído com sucesso', 'Excluir', 'E', [mbOk]);
+        end;
+
+        if sTela = TelasToStr(tpGrupo) then
+        begin
+          TViewMensagens.Mensagem('Grupo exluído com sucesso', 'Excluir', 'E', [mbOk]);
+        end;
+
+        if sTela = TelasToStr(tpSubgrupo) then
+        begin
+          TViewMensagens.Mensagem('Subgrupo exluído com sucesso', 'Excluir', 'E', [mbOk]);
+        end;
+
+
+      end;
       CardPanelListas.ActiveCard := CardPesquisa; // Retorna para a tela de pesquisa no CardPanel
     end;
 end;
@@ -135,21 +167,41 @@ begin // Salvar
        // Dispara a mensagem ao salvar baseado na tag do formulario
         case Self.Tag of
           1: begin
-           ShowMessage('Cliente salvo com sucesso.');
+            TViewMensagens.Mensagem('Cliente salvo com sucesso', 'Salvar', 'I', [mbOk]);
           end;
 
           2: begin
-            ShowMessage('Forncedor salvo com sucesso.');
+            TViewMensagens.Mensagem('Fornecedor salvo com sucesso', 'Salvar', 'I', [mbOk]);
           end;
 
           3: begin
-           ShowMessage('Funcionario salvo com sucesso.');
+            TViewMensagens.Mensagem('Funcionário salvo com sucesso', 'Salvar', 'I', [mbOk]);
           end;
         end;
       end
       else begin
         dsDados.DataSet.Post; // Irá salvar as mudanças no dataset sem precisar definir a QRY
-        ShowMessage('Dados salvos com sucesso.');
+
+        if sTela = TelasToStr(tpProdutos) then
+        begin
+          TViewMensagens.Mensagem('Produto salvo com sucesso', 'Salvar', 'I', [mbOk]);
+        end;
+
+        if sTela = TelasToStr(tpCaixa) then
+        begin
+          TViewMensagens.Mensagem('Produto salvo com sucesso', 'Salvar', 'I', [mbOk]);
+        end;
+
+        if sTela = TelasToStr(tpGrupo) then
+        begin
+          TViewMensagens.Mensagem('Grupo salvo com sucesso', 'Salvar', 'I', [mbOk]);
+        end;
+
+        if sTela = TelasToStr(tpSubgrupo) then
+        begin
+          TViewMensagens.Mensagem('Subgrupo salvo com sucesso', 'Salvar', 'I', [mbOk]);
+        end;
+
       end;
 
       CardPanelListas.ActiveCard := CardPesquisa; // Retorna para a tela de pesquisa no CardPanel

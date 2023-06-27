@@ -2137,9 +2137,10 @@ object ViewPrincipal: TViewPrincipal
     Height = 70
     Align = alTop
     BevelOuter = bvNone
-    Color = 5395026
+    Color = 6836540
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = -3
     object pnlLogo: TPanel
       Left = 0
       Top = 0
@@ -2147,7 +2148,7 @@ object ViewPrincipal: TViewPrincipal
       Height = 70
       Align = alLeft
       BevelOuter = bvNone
-      Color = 4605510
+      Color = 7690818
       ParentBackground = False
       TabOrder = 0
       object pnlLineLogo: TPanel
@@ -2157,7 +2158,7 @@ object ViewPrincipal: TViewPrincipal
         Height = 2
         Align = alTop
         BevelOuter = bvNone
-        Color = 1031129
+        Color = clSilver
         ParentBackground = False
         TabOrder = 0
       end
@@ -2280,7 +2281,7 @@ object ViewPrincipal: TViewPrincipal
         Margins.Bottom = 20
         Align = alLeft
         BevelOuter = bvNone
-        Color = 1031129
+        Color = clSilver
         ParentBackground = False
         TabOrder = 0
       end
@@ -2446,7 +2447,7 @@ object ViewPrincipal: TViewPrincipal
     Height = 475
     Align = alLeft
     BevelOuter = bvNone
-    Color = 5395026
+    Color = 6836540
     ParentBackground = False
     TabOrder = 1
     object pnlSair: TPanel
@@ -2456,7 +2457,7 @@ object ViewPrincipal: TViewPrincipal
       Height = 41
       Align = alBottom
       BevelOuter = bvNone
-      Color = 4605510
+      Color = 7690818
       ParentBackground = False
       TabOrder = 0
       object btnSair: TSpeedButton
@@ -2470,7 +2471,7 @@ object ViewPrincipal: TViewPrincipal
         Caption = '[ SAIR ]'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 6711039
+        Font.Color = 12171775
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = []
@@ -3465,7 +3466,7 @@ object ViewPrincipal: TViewPrincipal
       Height = 41
       Align = alBottom
       BevelOuter = bvNone
-      Color = 5395026
+      Color = 6836540
       ParentBackground = False
       TabOrder = 0
       object pnlLicenciado: TPanel
@@ -3493,7 +3494,7 @@ object ViewPrincipal: TViewPrincipal
           Margins.Bottom = 10
           Align = alLeft
           BevelOuter = bvNone
-          Color = 1031129
+          Color = clSilver
           ParentBackground = False
           TabOrder = 0
         end
