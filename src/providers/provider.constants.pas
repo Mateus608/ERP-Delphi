@@ -3,7 +3,8 @@ unit provider.constants;
 interface
 procedure GETPessoas(iTipo: Integer);
 procedure GETProdutos;
-procedure GETProdutoDetalhe(iCodProduto: Integer);
+procedure GETProdutoDetalhe(iCodProduto: Integer); overload;
+procedure GETProdutoDetalhe(iCodProduto, iCodFilial: Integer); overload;
 
 var
   iCodFilial: Integer; // Armazena o Codigo da Filial
@@ -33,11 +34,22 @@ begin
 end;
 
 procedure GETProdutoDetalhe(iCodProduto: Integer);
-begin // Busca apenas o detalhe de um produto
+begin // Busca apenas o detalhe de um produto  (todos)
   ServiceCadastro.QRYProduto2.Close; // Fecha a qry
   ServiceCadastro.QRYProduto2.SQL.Clear; // Limpa o SQL da qry
   ServiceCadastro.QRYProduto2.SQL.Add('select * from produto2 where pr2_codigopr1 = :codigo'); // Adiciona comando SQL
   ServiceCadastro.QRYProduto2.Params[0].AsInteger := iCodProduto; // Busca o parametro pelo indice (codigo = 0)
+  ServiceCadastro.QRYProduto2.Open();
+end;
+
+procedure GETProdutoDetalhe(iCodProduto, iCodFilial: Integer);
+begin // Busca apenas o detalhe de um produto  (por filial)
+  ServiceCadastro.QRYProduto2.Close; // Fecha a qry
+  ServiceCadastro.QRYProduto2.SQL.Clear; // Limpa o SQL da qry
+  ServiceCadastro.QRYProduto2.SQL.Add('select * from produto2 where pr2_codigopr1 = :codigo'); // Adiciona comando SQL
+  ServiceCadastro.QRYProduto2.SQL.Add('and pr2_filial = :filial'); // Adiciona comando SQL
+  ServiceCadastro.QRYProduto2.Params[0].AsInteger := iCodProduto; // Busca o parametro pelo indice (codigo = 0)
+  ServiceCadastro.QRYProduto2.Params[1].AsInteger := iCodFilial; // Busca o parametro pelo indice (codigo = 1)
   ServiceCadastro.QRYProduto2.Open();
 end;
 

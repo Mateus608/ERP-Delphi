@@ -54,7 +54,7 @@ end;
 procedure TViewProdutos.DSDadosDataChange(Sender: TObject; Field: TField);
 begin
   inherited;
-  GETProdutoDetalhe(ServiceCadastro.QRYProduto1PR1_CODIGO.AsInteger); // Mostra os detalhes do produto selecionado
+  GETProdutoDetalhe(ServiceCadastro.QRYProduto1PR1_CODIGO.AsInteger, iCodFilial); // Mostra os detalhes do produto selecionado
 end;
 
 procedure TViewProdutos.FormShow(Sender: TObject);

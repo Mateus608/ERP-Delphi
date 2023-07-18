@@ -2140,7 +2140,6 @@ object ViewPrincipal: TViewPrincipal
     Color = 6836540
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = -3
     object pnlLogo: TPanel
       Left = 0
       Top = 0

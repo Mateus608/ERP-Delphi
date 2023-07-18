@@ -3,7 +3,7 @@ inherited ViewBaseListas: TViewBaseListas
   Caption = 'ViewBaseListas'
   ClientHeight = 550
   ClientWidth = 1050
-  Position = poMainFormCenter
+  Position = poDefault
   OnShow = FormShow
   ExplicitWidth = 1050
   ExplicitHeight = 550

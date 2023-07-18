@@ -77,6 +77,11 @@ begin // Produtos
   GET_LineMENU(Sender); // Parâmetro da função
   ViewProdutos := TViewProdutos.Create(Self); // Cria o formulario produtos
   try
+
+   // Alinhar o formulario produtos
+    ViewProdutos.Top := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewProdutos.Height) / 2));
+    ViewProdutos.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewProdutos.Width) / 2));
+
     ViewProdutos.ShowModal; // Mostra o formulario
     ViewProdutos.sTela := TelasToStr(tpProdutos); // Armazena o parâmetro da função na variavel e identifica a tela (ShowMessage)
   finally
@@ -94,6 +99,10 @@ begin // Clientes
   GET_LineMENU(Sender); // Parâmetro da função
   ViewClientes := TViewClientes.Create(Self); // Cria o formulario clientes
   try
+    // Alinhar o formulario clientes
+    viewClientes.Top := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewClientes.Height) / 2));
+    viewClientes.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewClientes.Width) / 2));
+
     ViewClientes.Tag := PessoasToInt(tpClientes); // O Formulario Clientes recebe a Tag 1 (Definido no provider.conversao)
     ViewClientes.ShowModal; // Mostra o formulario
   finally
@@ -111,6 +120,11 @@ begin // Fornecedores
   GET_LineMENU(Sender); // Parâmetro da função
   ViewFornecedores := TViewFornecedores.Create(Self); // Cria o formulario fornecedores
   try
+
+   // Alinhar o formulario fornecedores
+    ViewFornecedores.Top := Round(pnlTopo.Height + ((pnlConteudo.Height - ViewFornecedores.Height) / 2));
+    ViewFornecedores.Left := Round(pnlMenu.Width + ((pnlConteudo.Width - ViewFornecedores.Width) / 2));
+
     ViewFornecedores.Tag := PessoasToInt(tpFuncionarios); // O Formulario Funcionarios recebe a Tag 1 (Definido no provider.conversao)
     ViewFornecedores.ShowModal; // Mostra o formulario
   finally

@@ -94,18 +94,21 @@ inherited ViewProdutos: TViewProdutos
                 Expanded = False
                 FieldName = 'PR2_VENDAVISTA'
                 Title.Caption = 'Venda Vista'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'PR2_VENDAPRAZO'
                 Title.Caption = 'Venda Prazo'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'PR2_ESTOQUE'
                 Title.Caption = 'Estoque'
+                Width = 64
                 Visible = True
               end>
           end
