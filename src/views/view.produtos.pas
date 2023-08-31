@@ -28,6 +28,15 @@ type
     DBEdit5: TDBEdit;
     Label6: TLabel;
     DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    Label9: TLabel;
+    DBEdit9: TDBEdit;
+    Label10: TLabel;
+    DBEdit10: TDBEdit;
+    Label11: TLabel;
     procedure FormShow(Sender: TObject);
     procedure DSDadosDataChange(Sender: TObject; Field: TField);
     procedure btnNovoClick(Sender: TObject);

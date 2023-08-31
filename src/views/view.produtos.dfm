@@ -3,6 +3,8 @@ inherited ViewProdutos: TViewProdutos
   TextHeight = 15
   inherited pnlTopo: TPanel
     inherited lblTitulo: TLabel
+      Width = 937
+      Height = 29
       Caption = 'Produtos'
       ExplicitWidth = 77
     end
@@ -115,6 +117,8 @@ inherited ViewProdutos: TViewProdutos
         end
       end
       inherited CardCadastro: TCard
+        Font.Name = 'Segoe UI Semilight'
+        ParentFont = False
         object Label1: TLabel
           Left = 24
           Top = 88
@@ -197,6 +201,75 @@ inherited ViewProdutos: TViewProdutos
           Font.Height = -16
           Font.Name = 'Segoe UI Semibold'
           Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label7: TLabel
+          Left = 24
+          Top = 330
+          Width = 88
+          Height = 21
+          Caption = 'Custo Inicial'
+          FocusControl = DBEdit7
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label8: TLabel
+          Left = 174
+          Top = 330
+          Width = 84
+          Height = 21
+          Caption = 'Venda Vista'
+          FocusControl = DBEdit8
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label9: TLabel
+          Left = 348
+          Top = 330
+          Width = 89
+          Height = 21
+          Caption = 'Venda Prazo'
+          FocusControl = DBEdit9
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label10: TLabel
+          Left = 530
+          Top = 330
+          Width = 59
+          Height = 21
+          Caption = 'Estoque'
+          FocusControl = DBEdit10
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label11: TLabel
+          Left = 24
+          Top = 272
+          Width = 236
+          Height = 32
+          Caption = '[ DETALHE PRODUTO ]'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 8816262
+          Font.Height = -24
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = []
           ParentFont = False
         end
         object pnlTituloCadProduto: TPanel
@@ -282,6 +355,42 @@ inherited ViewProdutos: TViewProdutos
           DataField = 'PR1_NCM'
           DataSource = DSDados
           TabOrder = 6
+        end
+        object DBEdit7: TDBEdit
+          Left = 24
+          Top = 357
+          Width = 129
+          Height = 23
+          DataField = 'PR2_CUSTOINI'
+          DataSource = DSProdutos2
+          TabOrder = 7
+        end
+        object DBEdit8: TDBEdit
+          Left = 174
+          Top = 357
+          Width = 155
+          Height = 23
+          DataField = 'PR2_VENDAVISTA'
+          DataSource = DSProdutos2
+          TabOrder = 8
+        end
+        object DBEdit9: TDBEdit
+          Left = 348
+          Top = 357
+          Width = 164
+          Height = 23
+          DataField = 'PR2_VENDAPRAZO'
+          DataSource = DSProdutos2
+          TabOrder = 9
+        end
+        object DBEdit10: TDBEdit
+          Left = 530
+          Top = 357
+          Width = 136
+          Height = 23
+          DataField = 'PR2_ESTOQUE'
+          DataSource = DSProdutos2
+          TabOrder = 10
         end
       end
     end
